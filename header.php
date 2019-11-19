@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 function make_header() {
 ?>
 <!DOCTYPE html>
@@ -34,9 +36,12 @@ function make_header() {
           <a class="dropdown-item" href="#">Category1</a>
           <a class="dropdown-item" href="#">Category2</a>
           <a class="dropdown-item" href="#">Category3</a>
+          <a class="dropdown-item" href="/shopping_cart.php">Shopping Cart</a>
         </div>
       </li>
     </ul>
+    <p style="transform: translateX(25px); background-color: orange; padding: 5px; border-radius: 45%; margin-top: 5px;"><?php echo $_SESSION["cartItems"] ?></p>
+    <img style="max-width: 50px" src="shopping-cart-solid.svg"/>
   </div>
 </nav>
 
