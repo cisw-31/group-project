@@ -4,15 +4,32 @@
 
     session_start();
 
+    
+
     //creates html header (see functions.php)
     make_header();
 
+    //make page title function and add here
+
 
     // if items are in the cart, show items
-    if($_SESSION['cart'].length > 0) {
+    if($_SESSION['cartItems']) {
         //display cart items
+        foreach ($_SESSION['cartItems'] as $item) {
+            ?>
+                <h4>Product Title</h4>
+                <p>description</p>
+            <?php
+        };
+
         ?> 
         <h2>cart items here</h2>
+        <a href="/checkout.php">
+            <button type="button" class="btn btn-primary btn-lg">Checkout</button>
+        </a>
+        <a href="/">
+                <button type="button" class="btn btn-secondary btn-lg">Keep Shopping</button>
+        </a>
         <?php
     } else {
         //else show "no items in cart"
@@ -28,9 +45,9 @@
         <?php
     }
 
-    
-    //show button for checkout, continue shopping, etc.
     ?>
+
+    
     
     <?php
 
