@@ -15,7 +15,9 @@ function make_header() {
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Store Name</a>
+  <a class="navbar-brand" href="/">
+    <img src="jejeti.png" width="50" height="50" alt="brand-index-page-link">
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -39,9 +41,14 @@ function make_header() {
           <a class="dropdown-item" href="/shopping_cart.php">Shopping Cart</a>
         </div>
       </li>
+        <li>
+          <a href="/shopping_cart.php" style="text-decoration: none;">
+            <?php echo count($_SESSION["cartItems"]); ?>
+          <img width="30" height="30" alt="shopping-cart" src="shopping-cart-solid.svg"/>
+          </a>
+      </li>
     </ul>
-    <p style="transform: translateX(25px); background-color: orange; padding: 5px; border-radius: 45%; margin-top: 5px;"><?php echo $_SESSION["cartItems"] ?></p>
-    <img style="max-width: 50px" src="shopping-cart-solid.svg"/>
+    
   </div>
 </nav>
 
