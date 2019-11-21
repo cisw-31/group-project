@@ -3,11 +3,13 @@
 
 session_start();
 
+
+
 $_SESSION['cartItems'] = [3, 4, 5];
 //grabs function files 
 include("functions.php");
 
-//creates html header (see functions.php)
+//creates html header (see functions.php) TEST COMMENT
 make_header();
 
 //connects to database and returns $conn (see functions.php)
