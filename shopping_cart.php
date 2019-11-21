@@ -28,7 +28,7 @@
             <button type="button" class="btn btn-primary btn-lg">Checkout</button>
         </a>
         <a href="/">
-                <button type="button" class="btn btn-secondary btn-lg">Keep Shopping</button>
+            <button type="button" class="btn btn-secondary btn-lg">Keep Shopping</button>
         </a>
         <?php
     } else {
