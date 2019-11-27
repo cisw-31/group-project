@@ -25,19 +25,19 @@ function make_header() {
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="/about.php">About</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Shop
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Category1</a>
-          <a class="dropdown-item" href="#">Category2</a>
-          <a class="dropdown-item" href="#">Category3</a>
+          <a class="dropdown-item" href="/">Home</a>
+          <a class="dropdown-item" href="/about.php">About</a>
+          <a class="dropdown-item" href="/contact.php">Contact</a>
           <a class="dropdown-item" href="/shopping_cart.php">Shopping Cart</a>
         </div>
       </li>
