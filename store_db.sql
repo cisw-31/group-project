@@ -1,13 +1,11 @@
-create database store_db;
+create database plant_db;
 
-use store_db;
+use plant_db;
 
-create table wines
+create table plants
 (
-   productId char(13) not null primary key,
-   productName char(80),
-   productOrigin char(80),
-   yearMade int not null,
+   plantId char(13) not null primary key,
+   plantName char(80),
    catid int unsigned,
    price float(4,2) not null,
    description varchar(255)
