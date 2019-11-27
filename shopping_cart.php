@@ -17,8 +17,9 @@
         //display cart items
         foreach ($_SESSION['cartItems'] as $item) {
             ?>
-                <h4>Product Title</h4>
-                <p>description</p>
+                <h4><?php $item->name ?></h4>
+                <h5><?php $item->price ?></h5>
+                <p><?php $item->description ?></p>
             <?php
         };
 
