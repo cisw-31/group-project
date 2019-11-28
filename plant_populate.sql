@@ -24,7 +24,7 @@ create table plant_index  (
   water_id varchar(10) not null,
   plant_height char(20) not null,
   plant_width char(20) not null,  
-  cost_id varchar(10) not null,  
+  cost_id varchar(10) not null 
 );
 
 
