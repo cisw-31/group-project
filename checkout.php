@@ -7,7 +7,8 @@ make_header();
 //if the cart is empty
     //display "cart is empty"
     //continue shopping button
-if(count($_SESSION["cartItems"]) < 1) {
+
+if(count($_SESSION["shopping_cart"]) < 1) {
     ?>
         <h3>Your cart is empty</h3>
         <a href="/">
