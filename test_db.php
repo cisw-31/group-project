@@ -63,7 +63,7 @@ if(!isset($_SESSION)) {
 // echo $item_price;
 
 
-addToCart(2);
+addToCart(3);
 
 if(isset($_SESSION)) {
     

@@ -82,7 +82,7 @@ function make_header() {
     <ul class="nav navbar-nav justify-content-end">
         <li>
           <a href="/shopping_cart.php" style="text-decoration: none;">
-            <?php echo count($_SESSION["cartItems"]); ?>
+            <?php cart_counter(); ?>
           <img width="30" height="30" alt="shopping-cart" src="shopping-cart-solid.svg"/>
           </a>
         </li>
