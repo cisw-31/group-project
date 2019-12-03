@@ -1,7 +1,7 @@
 <?php 
 
 include_once("db_connect.php");
-include_once("addToCart.php");
+include_once("add_to_cart.php");
 
 //start session if not running
 if(!isset($_SESSION)) {

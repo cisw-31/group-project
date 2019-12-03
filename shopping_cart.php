@@ -13,13 +13,13 @@
 
 
     // if items are in the cart, show items
-    if($_SESSION['cartItems']) {
+    if(count($_SESSION["shopping_cart"]) > 0) {
         //display cart items
-        foreach ($_SESSION['cartItems'] as $item) {
+        foreach ($_SESSION["shopping_cart"] as $item) {
             ?>
-                <h4><?php $item->name ?></h4>
-                <h5><?php $item->price ?></h5>
-                <p><?php $item->description ?></p>
+                <h4><?php echo $item["product_name"] ?></h4>
+                <h4><?php echo $item["product_price"] ?></h4>
+                <h4><?php echo $item["quantity"] ?></h4>
             <?php
         };
 
