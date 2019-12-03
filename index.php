@@ -3,9 +3,7 @@
 
 session_start();
 
-//new
 
-$_SESSION['cartItems'] = [3, 4, 5];
 //grabs function files 
 include("functions.php");
 
