@@ -1,10 +1,9 @@
 <?php 
 
 function addToCart($id) {
-    echo "adding to cart ...";
 
     $sql = "SELECT * FROM product_details WHERE product_id=$id";
-    $conn = new mysqli('localhost:3306', 'root', 'password', 'plant_database');
+    $conn = new mysqli('localhost', 'root', '', 'plant_database');
 
     //query db and assign query results to variable
     $result = $conn->query($sql);
