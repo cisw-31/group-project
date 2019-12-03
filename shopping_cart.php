@@ -16,15 +16,13 @@
     if(count($_SESSION["shopping_cart"]) > 0) {
         //display cart items
         foreach ($_SESSION["shopping_cart"] as $item) {
-            ?>
-                <h4><?php echo $item["product_name"] ?></h4>
-                <h4><?php echo $item["product_price"] ?></h4>
-                <h4><?php echo $item["quantity"] ?></h4>
+            ?>  
+            <?php display_cart_item($item) ?>
             <?php
         };
 
         ?> 
-        <h2>cart items here</h2>
+        
         <a href="/checkout.php">
             <button type="button" class="btn btn-primary btn-lg">Checkout</button>
         </a>
