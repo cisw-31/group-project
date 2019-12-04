@@ -13,7 +13,7 @@ create table water_index  (
 
 create table cost_index  (
   cost_id varchar(10) primary key,
-  cost_amount char(40) not null
+  cost_amount varchar(40) not null
 );
 
 create table plant_index  (
@@ -61,15 +61,15 @@ insert into water_index  (
 
 insert into cost_index  (
 	cost_id, cost_amount)values(
-	'1', '$3.99'
+	'1', '3.99'
 );
 insert into cost_index  (
 	cost_id, cost_amount)values(
-	'2', '$7.99'
+	'2', '7.99'
 );
 insert into cost_index  (
 	cost_id, cost_amount)values(
-	'3', '$11.99'
+	'3', '11.99'
 );
 
 
