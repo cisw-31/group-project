@@ -62,8 +62,10 @@ if(!isset($_SESSION)) {
 
 // echo $item_price;
 
-
+addToCart(1);
+addToCart(1);
 addToCart(3);
+addToCart(2);
 
 if(isset($_SESSION)) {
     
