@@ -11,15 +11,15 @@ include("functions.php");
 make_header();
 
 //connects to database and returns $conn (see functions.php)
-/*
-$conn = new mysqli('localhost:3306', 'root', 'password', 'store_db');
+
+/*$conn = db_connect();
 
 $category_query = "SELECT * FROM categories;";
 if($result = mysqli_query($conn, $category_query)) {
     $numrows = mysqli_num_rows($result);
     echo("there are ".$numrows." categories"); 
-}
-*/
+}*/
+
 include("frontpage.php");
 
 

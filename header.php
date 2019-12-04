@@ -51,10 +51,19 @@ function make_header() {
           Shop
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Category1</a>
-          <a class="dropdown-item" href="#">Category2</a>
-          <a class="dropdown-item" href="#">Category3</a>
-          <a class="dropdown-item" href="/shopping_cart.php">Shopping Cart</a>
+          <?php
+                $conn = db_connect();
+                //queries database for all categories and prints the link
+                $category_query = "SELECT * FROM shape_index ;";
+                $result = mysqli_query($conn, $category_query);
+                while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
+                  echo "<a class='dropdown-item' href='go_cat.php?value=".$row['shape_id']."'>".$row['shape_size']."</a>";
+                }
+
+                echo "<a class='dropdown-item' href='shopping_cart.php'>Shopping Cart</a>";
+
+          ?>
+
         </div>
       </li>
     </ul>
@@ -63,13 +72,18 @@ function make_header() {
       <!-- Idea: Similar to amazon's search bar will query base on category or all -->
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">fe</button>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div role="separator" class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
+            <a class="dropdown-item" href="#">All</a>
+              <?php
+              $conn = db_connect();
+              
+              $category_query = "SELECT * FROM shape_index ;";
+              $result = mysqli_query($conn, $category_query);
+              while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
+                echo "<a class='dropdown-item'>".$row['shape_size']."</a>";
+              }
+            ?>
           </div>
         </div>
         <input type="text" class="form-control" aria-label="Text input with dropdown button">
@@ -81,7 +95,7 @@ function make_header() {
     </ul>
     <ul class="nav navbar-nav justify-content-end">
         <li>
-          <a href="/shopping_cart.php" style="text-decoration: none;">
+          <a href="shopping_cart.php" style="text-decoration: none;">
             <?php cart_counter(); ?>
           <img width="30" height="30" alt="shopping-cart" src="shopping-cart-solid.svg"/>
           </a>
