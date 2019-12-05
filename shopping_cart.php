@@ -1,10 +1,10 @@
 <?php
-    //grabs function files 
+    //grabs function files
     include("functions.php");
 
     session_start();
 
-    
+
 
     //creates html header (see functions.php)
     make_header();
@@ -13,7 +13,7 @@
 
 
     // if items are in the cart, show items
-    if(count($_SESSION["shopping_cart"]) > 0) {
+    if(isset($_SESSION["shopping_cart"])) {
         //display cart items
     ?>
         <div class="container">
@@ -30,20 +30,20 @@
                 <tbody>
 
                 <?php
-                    
+
                 foreach ($_SESSION["shopping_cart"] as $item) {
-                      
-                    display_cart_item($item); 
-                    
+
+                    display_cart_item($item);
+
                 };
-        
+
                 ?>
 
 
                 </tbody>
                 <tfoot>
                     <tr class="visible-xs">
-            
+
                     </tr>
                     <tr>
                         <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
@@ -57,15 +57,15 @@
 
 
 
- 
-        
+
+
         <!-- <a href="/checkout.php">
             <button type="button" class="btn btn-primary btn-lg">Checkout</button>
         </a>
         <a href="/">
             <button type="button" class="btn btn-secondary btn-lg">Keep Shopping</button>
         </a> -->
-        
+
         <?php
     } else {
         //else show "no items in cart"
@@ -83,8 +83,8 @@
 
     ?>
 
-    
-    
+
+
     <?php
 
 
@@ -92,4 +92,3 @@
     make_footer();
 
 ?>
-
