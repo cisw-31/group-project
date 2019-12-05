@@ -9,4 +9,5 @@ include_once("cart_counter.php");
 include_once("display_checkout_item.php");
 include_once("calculate_cart_total.php");
 
+
 ?>

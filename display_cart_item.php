@@ -1,27 +1,35 @@
-<?php 
+<?php
 
-    function display_cart_item($item) {
+include("functions.php");
 
-        ?>
+function display_cart_item($item) {
+?>
 
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="/product-images/<?php echo $item["product_name"] ?>.jpg" class="card-img" alt="<?php echo $item["product_name"] ?>">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $item["product_name"] ?></h5>
-                        <p class="card-text"><?php echo $item["product_price"] ?></p>
-                        <p class="card-text">Quantity: <?php echo $item["quantity"] ?></p>
-                    </div>
+    <tr>
+        <td data-th="Product">
+            <div class="row">
+                <div class="col-sm-2 hidden-xs"><img src="/product-images/<?php echo $item["product_name"] ?>.jpg" alt="<?php echo $item["product_name"] ?>" style="max-width:100px; max-height:100px;"class="img-responsive"/></div>
+                <div class="col-sm-10">
+                    <h4 class="ml-3"><?php echo $item["product_name"] ?></h4>
                 </div>
             </div>
-        </div>
+        </td>
+        <td data-th="Price"><?php echo "$". $item["product_price"] ?></td>
+        <td data-th="Quantity">
+            <input type="number" class="form-control text-center" value="<?php echo $item["quantity"] ?>">
+        </td>
+        <td data-th="Subtotal" class="text-center"><?php row_total($item["quantity"], $item["product_price"]) ?></td>
+        <td class="actions" data-th="">
+            <button class="btn btn-sm"><img src="trash.png" style="max-width:25px;"/></button>								
+        </td>
+    </tr>
+
+<?php
 
 
-        <?php
-    }
+
+
+}
 
 
 ?>
