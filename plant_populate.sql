@@ -76,11 +76,11 @@ insert into cost_index  (
 
 insert into plant_index  (
 	plant_id, plant_botanical, plant_common, shape_id, water_id, plant_height, plant_width, cost_id)values(
-	'1', 'Salvia mellifera', 'Black Sage', '1', '1', '3-6 ft tall', '10 ft wide', '2'
+	'1', 'Salvia mellifera', 'Black Sage', '2', '1', '3-6 ft tall', '10 ft wide', '2'
 );
 insert into plant_index  (
 	plant_id, plant_botanical, plant_common, shape_id, water_id, plant_height, plant_width, cost_id)values(
-	'2', 'Salvia apiana', 'White Sage', '1', '1', '3-5 ft tall', '3-8 ft wide', '2'
+	'2', 'Salvia apiana', 'White Sage', '2', '1', '3-5 ft tall', '3-8 ft wide', '2'
 );
 insert into plant_index  (
 	plant_id, plant_botanical, plant_common, shape_id, water_id, plant_height, plant_width, cost_id)values(
