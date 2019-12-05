@@ -15,20 +15,57 @@
     // if items are in the cart, show items
     if(count($_SESSION["shopping_cart"]) > 0) {
         //display cart items
-        foreach ($_SESSION["shopping_cart"] as $item) {
-            ?>  
-            <?php display_cart_item($item) ?>
-            <?php
-        };
+    ?>
+        <div class="container">
+            <table id="cart" class="table table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th style="width:50%">Product</th>
+                        <th style="width:10%">Price</th>
+                        <th style="width:8%">Quantity</th>
+                        <th style="width:22%" class="text-center">Subtotal</th>
+                        <th style="width:10%"></th>
+                    </tr>
+                </thead>
+                <tbody>
 
-        ?> 
+                <?php
+                    
+                foreach ($_SESSION["shopping_cart"] as $item) {
+                      
+                    display_cart_item($item); 
+                    
+                };
         
-        <a href="/checkout.php">
+                ?>
+
+
+                </tbody>
+                <tfoot>
+                    <tr class="visible-xs">
+            
+                    </tr>
+                    <tr>
+                        <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                        <td colspan="2" class="hidden-xs"></td>
+                        <td class="hidden-xs text-center"><strong><?php calculate_cart_total(); ?></strong></td>
+                        <td><a href="checkout.php" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+
+
+ 
+        
+        <!-- <a href="/checkout.php">
             <button type="button" class="btn btn-primary btn-lg">Checkout</button>
         </a>
         <a href="/">
             <button type="button" class="btn btn-secondary btn-lg">Keep Shopping</button>
-        </a>
+        </a> -->
+        
         <?php
     } else {
         //else show "no items in cart"
