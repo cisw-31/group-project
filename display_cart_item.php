@@ -8,7 +8,7 @@ function display_cart_item($item) {
     <tr>
         <td data-th="Product">
             <div class="row">
-                <div class="col-sm-2 hidden-xs"><img src="/product-images/<?php echo $item["product_name"] ?>.jpg" alt="<?php echo $item["product_name"] ?>" style="max-width:100px; max-height:100px;"class="img-responsive"/></div>
+                <div class="col-sm-2 hidden-xs"><img src="<?php echo $item["product_name"] ?>.jpg" alt="<?php echo $item["product_name"] ?>" style="max-width:100px; max-height:100px;"class="img-responsive"/></div>
                 <div class="col-sm-10">
                     <h4 class="ml-3"><?php echo $item["product_name"] ?></h4>
                 </div>
@@ -20,7 +20,7 @@ function display_cart_item($item) {
         </td>
         <td data-th="Subtotal" class="text-center"><?php row_total($item["quantity"], $item["product_price"]) ?></td>
         <td class="actions" data-th="">
-            <button class="btn btn-sm"><img src="trash.png" style="max-width:25px;"/></button>								
+            <button class="btn btn-sm"><img src="trash.png" style="max-width:25px;"/></button>
         </td>
     </tr>
 
