@@ -20,7 +20,10 @@ function display_cart_item($item) {
         </td>
         <td data-th="Subtotal" class="text-center"><?php row_total($item["quantity"], $item["product_price"]) ?></td>
         <td class="actions" data-th="">
-            <button class="btn btn-sm"><img src="trash.png" style="max-width:25px;"/></button>
+            <form method="post" action="shopping_cart.php">
+                <input type="hidden" name="item" value="<?php echo $item["product_name"] ?>">
+                <button name="delete" class="btn btn-sm"><img src="trash.png" style="max-width:25px;"/></button>
+            </form>
         </td>
     </tr>
 
