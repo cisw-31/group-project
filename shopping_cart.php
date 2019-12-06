@@ -4,16 +4,53 @@
 
     session_start();
 
+    if(isset($_POST["update_quantity"])) {
+        if(isset($_SESSION["shopping_cart"])) {
 
+            $targetProduct = $_POST["item_to_update"];
+            $newQty = $_POST["update_quantity"];
 
-    //creates html header (see functions.php)
+            $tempSession = [];
+
+            foreach($_SESSION["shopping_cart"] as $item) {
+                if($item["product_name"] == $targetProduct) {
+                    $item["quantity"] = $newQty;
+                }
+                array_push($tempSession, $item);
+            }
+            session_unset();
+            session_start();
+            $_SESSION["shopping_cart"] = $tempSession;
+        }
+    }
+
+    if(isset($_POST["delete"])) {
+        // delete_cart_item($_POST["item"]);
+        if(isset($_SESSION["shopping_cart"])) {
+
+            $cart_contents = [];
+      
+            foreach($_SESSION["shopping_cart"] as $cart_item) {
+              if($cart_item["product_name"] !== $_POST["item"]) {
+                array_push($cart_contents, $cart_item);
+                }
+              }
+
+              session_unset();
+              session_start();
+              $_SESSION["shopping_cart"] = $cart_contents;
+
+          } else {
+            echo "not set?";
+          }
+    }
+
     make_header();
 
-    //make page title function and add here
 
 
     // if items are in the cart, show items
-    if(isset($_SESSION["shopping_cart"])) {
+    if(isset($_SESSION["shopping_cart"]) && count($_SESSION["shopping_cart"]) > 0) {
         //display cart items
     ?>
         <div class="container">
@@ -32,9 +69,9 @@
                 <?php
 
                 foreach ($_SESSION["shopping_cart"] as $item) {
-
-                    display_cart_item($item);
-
+                    if($item["quantity"] > 0) {
+                        display_cart_item($item);
+                    } 
                 };
 
                 ?>
