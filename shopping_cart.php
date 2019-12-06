@@ -4,6 +4,26 @@
 
     session_start();
 
+    if(isset($_POST["update_quantity"])) {
+        if(isset($_SESSION["shopping_cart"])) {
+
+            $targetProduct = $_POST["item_to_update"];
+            $newQty = $_POST["update_quantity"];
+
+            $tempSession = [];
+
+            foreach($_SESSION["shopping_cart"] as $item) {
+                if($item["product_name"] == $targetProduct) {
+                    $item["quantity"] = $newQty;
+                }
+                array_push($tempSession, $item);
+            }
+            session_unset();
+            session_start();
+            $_SESSION["shopping_cart"] = $tempSession;
+        }
+    }
+
     if(isset($_POST["delete"])) {
         // delete_cart_item($_POST["item"]);
         if(isset($_SESSION["shopping_cart"])) {
