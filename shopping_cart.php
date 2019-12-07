@@ -19,7 +19,7 @@
                 array_push($tempSession, $item);
             }
             session_unset();
-            session_start();
+            // session_start();
             $_SESSION["shopping_cart"] = $tempSession;
         }
     }
@@ -29,7 +29,7 @@
         if(isset($_SESSION["shopping_cart"])) {
 
             $cart_contents = [];
-      
+
             foreach($_SESSION["shopping_cart"] as $cart_item) {
               if($cart_item["product_name"] !== $_POST["item"]) {
                 array_push($cart_contents, $cart_item);
@@ -37,7 +37,7 @@
               }
 
               session_unset();
-              session_start();
+              // session_start();
               $_SESSION["shopping_cart"] = $cart_contents;
 
           } else {
@@ -71,7 +71,7 @@
                 foreach ($_SESSION["shopping_cart"] as $item) {
                     if($item["quantity"] > 0) {
                         display_cart_item($item);
-                    } 
+                    }
                 };
 
                 ?>

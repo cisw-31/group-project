@@ -2,7 +2,7 @@
 
 function make_footer() {
 ?>
-<nav class="navbar navbar-dark bg-success">
+<nav class="navbar fixed-bottom navbar-dark bg-success">
   <div class="container-fluid">
     <div class="row-footer">
       <div class="col-2"></div>
@@ -12,7 +12,7 @@ function make_footer() {
       </div class="col-2"></div>
     </div>
   </div>
- 
+
 </nav>
         <script src="form-validation.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
