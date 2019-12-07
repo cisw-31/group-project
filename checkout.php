@@ -108,9 +108,14 @@
         </div>
         <hr class="mb-4">
         <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="same-address">
+          <input type="checkbox" class="custom-control-input" id="same-address" onclick="toggleShippingForm()">
           <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
         </div>
+        <div class="col-md-8 order-md-1">
+        <hr class="mb-4">
+
+        <?php shipping_form(); ?>
+
         <hr class="mb-4">
 
         <h4 class="mb-3">Payment</h4>

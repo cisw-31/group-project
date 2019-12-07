@@ -11,6 +11,7 @@ function make_header() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jejeti</title>
+    <link rel="stylesheet" href="hidden.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
       .navbar-nav.navbar-center {
@@ -24,6 +25,14 @@ function make_header() {
         transform: translatex(-50%);
       }
     </style>
+
+    <!-- Toggles the shipping form based on user input -->
+    <script>
+      function toggleShippingForm() {
+        $("#shipping_form_wrapper").toggleClass('hidden');
+        $(".shipping_form").toggleClass('needs-validation');
+      }
+    </script>
 </head>
 
 
