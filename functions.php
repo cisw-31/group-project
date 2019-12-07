@@ -8,7 +8,10 @@ include_once("display_cart_item.php");
 include_once("cart_counter.php");
 include_once("display_checkout_item.php");
 include_once("calculate_cart_total.php");
+include_once("delete_cart_item.php");
+include_once("shipping_form.php");
 include_once("add_to_cart.php");
+
 
 
 ?>
