@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include_once("db_connect.php");
 include_once("add_to_cart.php");
@@ -20,7 +20,7 @@ if(!isset($_SESSION)) {
 // //if there is a result,
 // if($result->num_rows) {
 //     $row = $result->fetch_assoc();
-    
+
 //     $plantId = $row["plant_id"];
 //     $plantName = $row["plant_botanical"];
 //     $cost_id = $row["cost_id"];
@@ -66,17 +66,6 @@ addToCart(1);
 addToCart(1);
 addToCart(3);
 addToCart(2);
-
-if(isset($_SESSION)) {
-    
-    foreach($_SESSION as $item) {
-        echo $item["product_name"];
-    }
-} else {
-    echo "not working";
-}
-
-
 
 
 

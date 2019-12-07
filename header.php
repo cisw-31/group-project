@@ -36,12 +36,12 @@ function make_header() {
 </head>
 
 
-      
+
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
 
   <a class="navbar-brand" href="index.php">
     <img src="jejetilogo.png" width="50" height="50" alt="brand-index-page-link"> Jejeti
-  </a>  
+  </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -77,7 +77,7 @@ function make_header() {
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-center">
-      <li>  
+      <li>
       <!-- Idea: Similar to amazon's search bar will query base on category or all -->
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -86,7 +86,7 @@ function make_header() {
             <a class="dropdown-item" href="#">All</a>
               <?php
               $conn = db_connect();
-              
+
               $category_query = "SELECT * FROM shape_index ;";
               $result = mysqli_query($conn, $category_query);
               while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
@@ -110,7 +110,7 @@ function make_header() {
           </a>
         </li>
     </ul>
-    
+
   </div>
 
 
@@ -126,8 +126,8 @@ function make_header() {
 
 
 
-<body>
-    
+<body style="margin-bottom: 100px;">
+
 
 
 
