@@ -15,7 +15,7 @@
     //Query to the shape_index table, 
     $category_query = "SELECT * from shape_index;";
     $result = mysqli_query($conn, $category_query);
-    ?> <div class="row cat-display"> <?php
+    ?> <div class="row cat-display justify-content-center"> <?php
     while($row = mysqli_fetch_array($result)){
     ?>  
 
@@ -25,7 +25,7 @@
         if ($counter_loop == '3'){ 
         ?>
             </div>
-            <div class="row all-cat-display-card">
+            <div class="row all-cat-display-card justify-content-center">
 
             <?php $counter_loop = 0; ?>
         <?php
