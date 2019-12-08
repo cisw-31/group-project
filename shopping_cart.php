@@ -4,6 +4,13 @@
 
     session_start();
 
+    if (isset($_POST['submit']))
+
+    {
+        $prod_id = $_GET["value"];
+        addToCart($prod_id);
+    }
+
     if(isset($_POST["update_quantity"])) {
         if(isset($_SESSION["shopping_cart"])) {
 
@@ -83,7 +90,7 @@
 
                     </tr>
                     <tr>
-                        <td><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+                        <td><a href="all_cat.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
                         <td colspan="2" class="hidden-xs"></td>
                         <td class="hidden-xs text-center"><strong><?php calculate_cart_total(); ?></strong></td>
                         <td><a href="checkout.php" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
@@ -111,7 +118,7 @@
             <div class="alert alert-warning" role="alert">
                 There are no items in your shopping cart!
             </div>
-            <a href="/">
+            <a href="all_cat.php">
                 <button type="button" class="btn btn-secondary btn-lg">Keep Shopping</button>
             </a>
         </div>

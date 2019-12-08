@@ -65,11 +65,10 @@ function make_header() {
                 //queries database for all categories and prints the link
                 $category_query = "SELECT * FROM shape_index ;";
                 $result = mysqli_query($conn, $category_query);
+                echo "<a class='dropdown-item' href='all_cat.php'>All</a>";
                 while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
-                  echo "<a class='dropdown-item' href='go_cat.php?value=".$row['shape_id']."'>".$row['shape_size']."</a>";
+                  echo "<a class='dropdown-item' href='go_cat.php?value=".$row['shape_id']."'>".ucfirst($row['shape_size'])."</a>";
                 }
-
-                echo "<a class='dropdown-item' href='shopping_cart.php'>Shopping Cart</a>";
 
           ?>
 

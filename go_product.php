@@ -12,9 +12,10 @@
     $category_query_2 = "SELECT * FROM plant_index WHERE plant_id = '$value';";
     $result = mysqli_query($conn, $category_query);
     $result2 = mysqli_query($conn, $category_query_2);
+    $result3 = mysqli_query($conn, $category_query);
     $row = mysqli_fetch_array($result);
     $row2 = mysqli_fetch_array($result2);
-    $requesty = $row2['plant_common'];
+
 ?>
     <div class="container">
         <div class="row product-header">
@@ -29,17 +30,22 @@
             <div class="col product-details">
                 <h5> Product Details </h5>
                 <ul>
-                    <li>    </li>
-                    <li>    </li>
-                    <li>    </li>
-                    <li>    </li>
-                    <li>    </li>    
+                <?php 
+                $row3 = mysqli_fetch_row($result3);
+                for ($x = 0; $x < mysqli_field_count($conn); $x++) {
+                ?>
+                    <?php echo "<li>".$row3[$x]."</li>";?>
+                <?php
+                }
+                ?>           
                 </ul>
-                <button> Add to Cart </button>
+                <?php echo "<form action='shopping_cart.php?value=".$value."' method='post'>
+                    <input type='submit' name='submit' value='Add to Cart'>
+                </form>" ?>
             </div>
         </div>
         <div class="row">
-            <?php echo " Spacing Comment "; ?>
+            
         </div>
     </div>
 
