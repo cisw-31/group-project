@@ -61,23 +61,16 @@ insert into water_index  (
 
 insert into cost_index  (
 	cost_id, cost_amount)values(
-	'1', '3.99'
+	'1', 3.99
 );
 insert into cost_index  (
 	cost_id, cost_amount)values(
-	'2', '7.99'
+	'2', 7.99
 );
 insert into cost_index  (
 	cost_id, cost_amount)values(
-	'3', '11.99'
+	'3', 11.99
 );
 
 
 
-create table product_details as (
-    (select plant_index.plant_id as product_id, 
-            plant_index.plant_botanical as product_name,
-            cost_index.cost_amount as product_cost
-    from plant_index, cost_index
-    where plant_index.cost_id = cost_index.cost_id)
-);
