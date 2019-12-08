@@ -4,6 +4,9 @@
 
     session_start();
 
+    //Checks if value submit was passed by go_product
+    //If value was passed, we retrieve the productid and make 
+    //call to addToCart passing the prod_it to add it to cart
     if (isset($_POST['submit']))
 
     {
@@ -11,6 +14,7 @@
         addToCart($prod_id);
     }
 
+    
     if(isset($_POST["update_quantity"])) {
         if(isset($_SESSION["shopping_cart"])) {
 
@@ -90,6 +94,7 @@
 
                     </tr>
                     <tr>
+                        <?php //Clicking on Continue Shopping redirects to all_cat.php and checkout redirects to Checkout.php ?>
                         <td><a href="all_cat.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
                         <td colspan="2" class="hidden-xs"></td>
                         <td class="hidden-xs text-center"><strong><?php calculate_cart_total(); ?></strong></td>

@@ -30,16 +30,22 @@
             <div class="col product-details">
                 <h5> Product Details </h5>
                 <ul>
-                <?php 
+                <?php //fetches the row from the result set
+                      //For loop will iterate through the returned array
+                      //field_count is used to get number of columns 
+                      // in our recent query
+                      //start at index 1 as we do not need to display id
                 $row3 = mysqli_fetch_row($result3);
-                for ($x = 0; $x < mysqli_field_count($conn); $x++) {
+                for ($x = 1; $x < mysqli_field_count($conn); $x++) {
                 ?>
                     <?php echo "<li>".$row3[$x]."</li>";?>
                 <?php
                 }
                 ?>           
                 </ul>
-                <?php echo "<form action='shopping_cart.php?value=".$value."' method='post'>
+                <?php //We echo html to product an input form that add product to cart
+                      //and redirects to the shopping cart
+                echo "<form action='shopping_cart.php?value=".$value."' method='post'>
                     <input type='submit' name='submit' value='Add to Cart'>
                 </form>" ?>
             </div>
