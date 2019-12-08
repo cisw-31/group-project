@@ -4,6 +4,13 @@
 
     session_start();
 
+    if (isset($_POST['submit']))
+
+    {
+        $prod_id = $_GET["value"];
+        addToCart($prod_id);
+    }
+
     if(isset($_POST["update_quantity"])) {
         if(isset($_SESSION["shopping_cart"])) {
 
