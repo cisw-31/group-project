@@ -76,32 +76,31 @@ function make_header() {
         </div>
       </li>
     </ul>
-    <ul class="nav navbar-nav navbar-center">
-      <li>
-      <!-- Idea: Similar to amazon's search bar will query base on category or all -->
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">fe</button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">All</a>
-              <?php
-              $conn = db_connect();
+    <?php /*<ul class="nav navbar-nav navbar-center">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="input-group">
+            <span class="input-group-addon">
+            <select>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+        </span>
 
-              $category_query = "SELECT * FROM shape_index ;";
-              $result = mysqli_query($conn, $category_query);
-              while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
-                echo "<a class='dropdown-item'>".$row['shape_size']."</a>";
-              }
-            ?>
-          </div>
-        </div>
-        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+          <input id="search" type="text" class="form-control" name="search" placeholder="Email">
+
+          <span class="input-group-addon"> <button>Submit</button></span>
       </div>
+  </div>
+  <div class="col-md-2"></div>
+  </div>
 
 
-      </li>
 
-    </ul>
+    </ul> */?>
     <ul class="nav navbar-nav justify-content-end">
         <li>
           <a href="shopping_cart.php" style="text-decoration: none;">
