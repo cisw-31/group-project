@@ -30,7 +30,6 @@ function make_header() {
     <script>
       function toggleShippingForm() {
         $("#shipping_form_wrapper").toggleClass('hidden');
-        $(".shipping_form").toggleClass('needs-validation');
       }
     </script>
 </head>
