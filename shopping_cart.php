@@ -8,7 +8,7 @@
 
     {
         $prod_id = $_GET["value"];
-        addToCart($prod_id);
+        add_to_cart($prod_id);
     }
 
     if(isset($_POST["update_quantity"])) {
@@ -60,7 +60,7 @@
     if(isset($_SESSION["shopping_cart"]) && count($_SESSION["shopping_cart"]) > 0) {
         //display cart items
     ?>
-        <div class="container">
+        <div class="container mt-5">
             <table id="cart" class="table table-hover table-condensed">
                 <thead>
                     <tr>

@@ -1,5 +1,7 @@
 <?php 
 
+include_once("functions.php");
+
 function add_to_cart($id) {
 
     if(!isset($_SESSION)) {
@@ -7,7 +9,7 @@ function add_to_cart($id) {
     };
 
     $sql2 = "SELECT * FROM product_details WHERE product_id=$id";
-    $conn2 = new mysqli('localhost', 'root', '', 'plant_database');
+    $conn2 = db_connect();
 
     //query db and assign query results to variable
     $product_result = $conn2->query($sql2);
