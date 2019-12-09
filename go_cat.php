@@ -10,14 +10,14 @@
     $conn = db_connect();
     $category_query = "SELECT * from plant_index WHERE shape_id = '$value';";
     $result = mysqli_query($conn, $category_query);
-    ?> <div class="row cat-display"> <?php
+    ?> <div class="row cat-display justify-content-center"> <?php
     while($row = mysqli_fetch_array($result)){
     ?>  
         <?php 
         if ($counter_loop == '3'){ 
         ?>
             </div>
-            <div class="row cat-display-card">
+            <div class="row cat-display-card justify-content-center">
 
             <?php $counter_loop = 0; ?>
         <?php

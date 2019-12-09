@@ -11,18 +11,24 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="FRA_shrubs.jpg" class="d-block w-100" alt="scrubslol">
-                        <h5>First slide label</h5>
-                        <p>Buy these shrubs.</p>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Second slide label</h5>
+                            <p>Or buy these shrubs.</p>
+                        </div>
                     </div>
                     <div class="carousel-item">
                         <img src="FRA_shrubs.jpg" class="d-block w-100" alt="...">
-                        <h5>Second slide label</h5>
-                        <p>Or buy these shrubs.</p>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Second slide label</h5>
+                            <p>Or buy these shrubs.</p>
+                        </div>
                     </div>
                     <div class="carousel-item">
                         <img src="FRA_shrubs.jpg" class="d-block w-100" alt="...">
-                        <h5>Third slide label</h5>
-                        <p>?.</p>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Second slide label</h5>
+                            <p>Or buy these shrubs.</p>
+                        </div>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
