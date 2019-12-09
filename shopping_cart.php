@@ -11,7 +11,7 @@
 
     {
         $prod_id = $_GET["value"];
-        addToCart($prod_id);
+        add_to_cart($prod_id);
     }
 
     

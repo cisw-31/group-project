@@ -1,16 +1,22 @@
 <?php 
 
-function addToCart($id) {
+include_once("functions.php");
 
-    $sql = "SELECT * FROM product_details WHERE product_id=$id";
-    $conn = new mysqli('localhost', 'root', '', 'plant_database');
+function add_to_cart($id) {
+
+    if(!isset($_SESSION)) {
+        session_start();
+    };
+
+    $sql2 = "SELECT * FROM product_details WHERE product_id=$id";
+    $conn2 = db_connect();
 
     //query db and assign query results to variable
-    $result = $conn->query($sql);
+    $product_result = $conn2->query($sql2);
 
     //if there is a result,
-    if($result->num_rows) {
-        $row = $result->fetch_assoc();
+    if($product_result->num_rows) {
+        $row = $product_result->fetch_assoc();
         
         $productName = $row["product_name"];
         $productPrice = $row["product_cost"];
@@ -30,10 +36,6 @@ function addToCart($id) {
         ];
         $_SESSION["shopping_cart"][$id] = $newItem;
     }
-    
-    echo "im here: ". $_SESSION["shopping_cart"][$id]["product_name"];
-    echo " im here too: ". $_SESSION["shopping_cart"][$id]["product_price"];
-    echo " im here too: ". $_SESSION["shopping_cart"][$id]["quantity"];
 }
 
 
