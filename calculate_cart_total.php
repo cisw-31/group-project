@@ -8,7 +8,7 @@
                 $cart_total = $cart_total + $item_total;
             }
         }
-        echo "$". $cart_total;
+        echo "$". number_format($cart_total, 2);
     }
 
 ?>

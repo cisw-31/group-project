@@ -1,7 +1,8 @@
 <?php 
 
     function row_total($qty, $price) {
-        echo "$". $qty * $price;
+        $tot = $qty * $price;
+        echo "$". number_format($tot, 2);
     }
 
     function display_checkout_item() {
