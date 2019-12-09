@@ -2,23 +2,25 @@
 
 
 function shipping_form() {
-    ?>
+
+  $states2 = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ];
+?>
     
-    
+  
     <div id="shipping_form_wrapper">
       <h4 class="mb-3">Shipping address</h4>
-      <form id="shipping_form" action="complete_order.php" method="post" class="needs-validation" novalidate>
+      <!-- <form id="shipping_form" action="complete_order.php" method="post" class="needs-validation" novalidate> -->
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">First name</label>
-            <input type="text" name="ship_first-name" class="form-control" id="ship_firstName" placeholder="" value="">
+            <input type="text" name="ship_first_name" class="form-control" id="ship_first_name" placeholder="" value="">
             <div class="invalid-feedback">
               Valid first name is required.
             </div>
           </div>
           <div class="col-md-6 mb-3">
             <label for="lastName">Last name</label>
-            <input type="text" name="ship_last-name" class="form-control" id="ship_lastName" placeholder="" value="">
+            <input type="text" name="ship_last_name" class="form-control" id="ship_last_name" placeholder="" value="">
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -35,7 +37,7 @@ function shipping_form() {
 
         <div class="mb-3">
           <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-          <input type="text" name="ship_address-2" class="form-control" id="ship_address2" placeholder="Apartment or suite">
+          <input type="text" name="ship_address2" class="form-control" id="ship_address2" placeholder="Apartment or suite">
         </div>
 
         <div class="mb-3">
@@ -58,9 +60,9 @@ function shipping_form() {
             <label for="state">State</label>
             <select class="custom-select d-block w-100" name="ship_state" id="ship_state">
               <option value="">Choose...</option>
-              <?php foreach($states as $state) {
+              <?php foreach($states2 as $ship_state) {
                     ?>
-                    <option><?php echo $state ?></option>
+                    <option><?php echo $ship_state ?></option>
                     <?php
                 } ?>
             </select>
