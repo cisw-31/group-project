@@ -1,8 +1,7 @@
 <?php
 
-//session_start();
-
 function make_header() {
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
