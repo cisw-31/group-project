@@ -4,7 +4,7 @@
 //these parameters will vary based on db credentials and host
 
 function db_connect(){
-    $conn = new mysqli('localhost:3306', 'root', 'password', 'plant_database');
+    $conn = new mysqli('localhost', 'root', '', 'plant_database');
     if (mysqli_connect_errno()) {
         echo "Failed to connect to database: ".mysqli_connect_error();
     }
