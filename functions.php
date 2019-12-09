@@ -11,6 +11,7 @@ include_once("calculate_cart_total.php");
 include_once("delete_cart_item.php");
 include_once("shipping_form.php");
 include_once("add_to_cart.php");
+include_once("print_shipping_info.php");
 
 
 
