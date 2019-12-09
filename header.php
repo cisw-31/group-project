@@ -1,8 +1,7 @@
 <?php
 
-//session_start();
-
 function make_header() {
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +29,6 @@ function make_header() {
     <script>
       function toggleShippingForm() {
         $("#shipping_form_wrapper").toggleClass('hidden');
-        $(".shipping_form").toggleClass('needs-validation');
       }
     </script>
 </head>
