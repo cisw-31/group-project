@@ -28,6 +28,34 @@ create table plant_index  (
 );
 
 
+/* #####below is for user account##### */
+/* #####table: "customers" is created##### */
+
+create table customers
+(
+  customerid int unsigned not null auto_increment primary key,  
+
+  /* #####below is account log in info ##### */
+  username char(16) not null,
+  password char(40) not null,
+  type char(40),
+
+  /* #####below is customer shipping info ##### */
+  ship_name char(60),
+  ship_address char(80),
+  ship_city char(30),
+  ship_state char(20),
+  ship_zip char(10),
+  ship_country char(20)
+);
+
+insert into customers  (
+  /* #####test user account##### */
+	username, password)values(
+	'zijie', sha1('zijie')
+);
+
+/* ########## */
 
 insert into shape_index  (
 	shape_id, shape_size)values(
@@ -71,7 +99,6 @@ insert into cost_index  (
 	cost_id, cost_amount)values(
 	'3', '11.99'
 );
-
 
 
 insert into plant_index  (plant_id, plant_botanical, plant_common, shape_id, water_id, plant_height, plant_width, cost_id)values('1','Acer macrophyllum','Big Leaf Maple','3','3','30 - 115 ft tall','65 ft wide','3');

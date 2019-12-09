@@ -13,6 +13,9 @@ include_once("shipping_form.php");
 include_once("add_to_cart.php");
 include_once("print_shipping_info.php");
 
+//below is added by ZJ
+include_once("display_account_form.php");
+include_once("auth_fun.php");
 
 
 ?>

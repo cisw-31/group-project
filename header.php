@@ -99,14 +99,34 @@ function make_header() {
 
 
     </ul> */?>
+
+    <a href="login.php">
+      <div align="right" valign="bottom"> 
+      <?php /* below for user sign in status */
+        if(isset($_SESSION['customer_username'])) { //logged-in
+          echo "Dear ".$_SESSION['customer_username'];
+        } else { //temporary customer user items
+          echo "Hello, Sign in";
+        }
+
+      ?>
+      </div>
+    </a>
+
     <ul class="nav navbar-nav justify-content-end">
         <li>
           <a href="shopping_cart.php" style="text-decoration: none;">
-            <?php cart_counter(); ?>
+            <?php 
+            echo "&ensp;";
+            cart_counter(); ?>
           <img width="30" height="30" alt="shopping-cart" src="shopping-cart-solid.svg"/>
           </a>
         </li>
     </ul>
+
+    </td>
+
+
 
   </div>
 
