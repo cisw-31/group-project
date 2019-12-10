@@ -10,14 +10,15 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="FRA_shrubs.jpg" class="d-block w-100" alt="scrubslol">
+                        <a href="information.php"><img src="information of Jejeti company.jpg" 
+                           class="d-block w-100" alt="shrubslol"height="660"width="440"></a>
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Second slide label</h5>
                             <p>Or buy these shrubs.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="FRA_shrubs.jpg" class="d-block w-100" alt="...">
+                        <img src="Our planet.jpg" class="d-block w-100" alt="..." height="660"width="440">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Second slide label</h5>
                             <p>Or buy these shrubs.</p>

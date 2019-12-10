@@ -11,6 +11,8 @@ function make_header() {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jejeti</title>
     <link rel="stylesheet" href="hidden.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
       .navbar-nav.navbar-center {
@@ -22,6 +24,9 @@ function make_header() {
         position: relative;
         left: 50%;
         transform: translatex(-50%);
+      }
+      .w3-button {
+        width:150px;
       }
     </style>
 
@@ -106,7 +111,7 @@ function make_header() {
         if(isset($_SESSION['customer_username'])) { //logged-in
           echo "Dear ".$_SESSION['customer_username'];
         } else { //temporary customer user items
-          echo "Hello, Sign in";
+          echo "<p><button class='w3-button w3-green'>Login</button></p>";
         }
 
       ?>
