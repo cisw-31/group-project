@@ -20,7 +20,22 @@
         $_SESSION['admin_user'] = $username;
         make_header();
         ?>
-        <div class="container"> </div>
+        <div class="container">
+            <div class="row admin-welcome justify-content-center">
+                <div class="col-8 admin-welcome"> <h1>Welcome to the Admin Dashboard, <?php echo ucfirst($username); ?>.</h1> </div>
+            </div> 
+            <div class="row admin-options">
+                <div class="col-6 admin-options">
+                    <ul>
+                        <li><a href="mod_cat_form.php?value=add">Add Category to Shop</a></li>
+                        <li><a href="mod_cat_form.php?value=del">Delete Category from Shop</a></li>
+                        <li><a href="mod_product_form.php?value=add">Add Product to Shop</a></li>
+                        <li><a href="mod_product_form.php?value=del">Delete Product to Shop</a></li>
+                    </ul>
+                </div>
+            </div>
+        
+        </div>
     
         <?php make_footer(); ?>
 
