@@ -31,7 +31,7 @@
         <div class="row login-admin">
             <div class="col-4"></div>
             <div class="col-6">
-                <form method="post" action="auth.php">
+                <form method="post" action="auth_admin.php">
                 <table bgcolor="#cccccc">
                 <tr>
                 <td>Username:</td>
