@@ -13,7 +13,8 @@ function make_header() {
     <link rel="stylesheet" href="hidden.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
       .navbar-nav.navbar-center {
         position: absolute;
@@ -106,7 +107,7 @@ function make_header() {
     </ul> */?>
 
     <a href="login.php">
-      <div align="right" valign="bottom"> 
+      <div class="login-button" > 
       <?php /* below for user sign in status */
         if(isset($_SESSION['customer_username'])) { //logged-in
           echo "Dear ".$_SESSION['customer_username'];

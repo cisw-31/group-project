@@ -13,7 +13,7 @@
                         <a href="information.php"><img src="information of Jejeti company.jpg" 
                            class="d-block w-100" alt="shrubslol"height="660"width="440"></a>
                         <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
+                            <h1>Learn more about our company</h1>
                             <p>Or buy these shrubs.</p>
                         </div>
                     </div>
