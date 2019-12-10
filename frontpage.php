@@ -3,6 +3,18 @@
         <div class="col-2"></div>
         <div class="col-8">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<style>
+  .centered{
+   position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         font-weight: bold;
+         font-size: 260%;
+         background-color: #02BA02;
+}
+</style>
+
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -10,25 +22,18 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="FRA_shrubs.jpg" class="d-block w-100" alt="scrubslol">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Or buy these shrubs.</p>
-                        </div>
+                        <a href="information.php"><img src="information of Jejeti company.jpg" class="d-block w-100" alt="scrubslol"height="660"width="440">
+                        <h5><div class="centered">information of Jejeti company<div></h5></a>
+                        <p></p>
                     </div>
                     <div class="carousel-item">
-                        <img src="FRA_shrubs.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Or buy these shrubs.</p>
-                        </div>
-                    </div>
+                        <img src="Our planet.jpg" class="d-block w-100" alt="..." height="660"width="440">
+                        <h5>><div class="centered">Our planet</div></h5>
+                                            </div>
                     <div class="carousel-item">
-                        <img src="FRA_shrubs.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Or buy these shrubs.</p>
-                        </div>
+                       <a href = "contact.php">   <img src="Contact us.jpg" class="d-block w-100" alt="..." height="660" width="440" /><h5><div class="centered">Contact us</div></h5>
+</a>
+                                                
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -45,10 +50,4 @@
     </div>
 </div>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col"><p> Placeholder Text</p></div>
-        <div class="col"><p> Placeholder Text</p></div>
-        <div class="col"><p> Placeholder Text</p></div>
-    </div> 
 </div>

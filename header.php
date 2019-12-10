@@ -1,7 +1,8 @@
 <?php
 
+//session_start();
+
 function make_header() {
-  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +11,6 @@ function make_header() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jejeti</title>
-    <link rel="stylesheet" href="hidden.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
       .navbar-nav.navbar-center {
@@ -24,22 +24,15 @@ function make_header() {
         transform: translatex(-50%);
       }
     </style>
-
-    <!-- Toggles the shipping form based on user input -->
-    <script>
-      function toggleShippingForm() {
-        $("#shipping_form_wrapper").toggleClass('hidden');
-      }
-    </script>
 </head>
 
 
-
+      
 <nav class="navbar navbar-expand-lg navbar-light bg-warning">
 
   <a class="navbar-brand" href="index.php">
     <img src="jejetilogo.png" width="50" height="50" alt="brand-index-page-link"> Jejeti
-  </a>
+  </a>  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -63,71 +56,52 @@ function make_header() {
                 //queries database for all categories and prints the link
                 $category_query = "SELECT * FROM shape_index ;";
                 $result = mysqli_query($conn, $category_query);
-                echo "<a class='dropdown-item' href='all_cat.php'>All</a>";
-                while($row = mysqli_fetch_array($result)){   //While loop that iterates through array
-                  //Will create a link for every category of plant that our database includes
-                  echo "<a class='dropdown-item' href='go_cat.php?value=".$row['shape_id']."'>".ucfirst($row['shape_size'])."</a>";
+                while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
+                  echo "<a class='dropdown-item' href='go_cat.php?value=".$row['shape_id']."'>".$row['shape_size']."</a>";
                 }
+
+                echo "<a class='dropdown-item' href='shopping_cart.php'>Shopping Cart</a>";
 
           ?>
 
         </div>
       </li>
     </ul>
-    <?php /*<ul class="nav navbar-nav navbar-center">
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <div class="input-group">
-            <span class="input-group-addon">
-            <select>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-        </span>
-
-          <input id="search" type="text" class="form-control" name="search" placeholder="Email">
-
-          <span class="input-group-addon"> <button>Submit</button></span>
+    <ul class="nav navbar-nav navbar-center">
+      <li>  
+      <!-- Idea: Similar to amazon's search bar will query base on category or all -->
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">All</a>
+              <?php
+              $conn = db_connect();
+              
+              $category_query = "SELECT * FROM shape_index ;";
+              $result = mysqli_query($conn, $category_query);
+              while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
+                echo "<a class='dropdown-item'>".$row['shape_size']."</a>";
+              }
+            ?>
+          </div>
+        </div>
+        <input type="text" class="form-control" aria-label="Text input with dropdown button">
       </div>
-  </div>
-  <div class="col-md-2"></div>
-  </div>
 
 
+      </li>
 
-    </ul> */?>
-
-    <a href="login.php">
-      <div align="right" valign="bottom"> 
-      <?php /* below for user sign in status */
-        if(isset($_SESSION['customer_username'])) { //logged-in
-          echo "Dear ".$_SESSION['customer_username'];
-        } else { //temporary customer user items
-          echo "Hello, Sign in";
-        }
-
-      ?>
-      </div>
-    </a>
-
+    </ul>
     <ul class="nav navbar-nav justify-content-end">
         <li>
           <a href="shopping_cart.php" style="text-decoration: none;">
-            <?php 
-            echo "&ensp;";
-            cart_counter(); ?>
+            <?php cart_counter(); ?>
           <img width="30" height="30" alt="shopping-cart" src="shopping-cart-solid.svg"/>
           </a>
         </li>
     </ul>
-
-    </td>
-
-
-
+    
   </div>
 
 
@@ -143,8 +117,8 @@ function make_header() {
 
 
 
-<body style="margin-bottom: 100px;">
-
+<body>
+    
 
 
 
