@@ -30,7 +30,7 @@
                         <li><a href="mod_cat_form.php?value=add">Add Category to Shop</a></li>
                         <li><a href="mod_cat_form.php?value=del">Delete Category from Shop</a></li>
                         <li><a href="mod_product_form.php?value=add">Add Product to Shop</a></li>
-                        <li><a href="mod_product_form.php?value=del">Delete Product to Shop</a></li>
+                        <li><a href="mod_product_form.php?value=del">Delete Product from Shop</a></li>
                     </ul>
                 </div>
             </div>
