@@ -115,7 +115,40 @@ function make_header() {
           echo "<p><button class='w3-button w3-green'>Login</button></p>";
         }
 
+<<<<<<< HEAD
+  <div class="dropdown">
+  <?php 
+    if(isset($_SESSION['customer_username'])) { //logged in customer ?>
+      <button class="dropbtn"> <?php
+        echo "Dear ".$_SESSION['customer_username']; ?>
+      </button>
+      <div class="dropdown-content">
+        <form method="post" action="account.php">
+            <input type="submit" value="My Account"/></td></tr>
+            <input type="hidden" name="type" value="edit"/> 
+        </form>
+        <form method="post" action="auth.php">
+            <input type="submit" value="Log Out"/></td></tr>
+            <input type="hidden" name="type" value="logout"/> 
+        </form>
+      </div>
+  <?php   
+        }else{ //guest ?>
+      <button class="dropbtn"> <?php
+        echo "Guest"; ?>
+      </button>
+      <div class="dropdown-content">
+        <form method="post" action="account.php">
+            <input type="submit" value="Log In"/></td></tr>
+            <input type="hidden" name="type" value="login"/> 
+        </form>
+        <form method="post" action="account.php">
+            <input type="submit" value="Sign Up"/></td></tr>
+            <input type="hidden" name="type" value="signup"/> 
+        </form>
+=======
       ?>
+>>>>>>> 593c02afe5bffa8f220e83a02a2aea6d1a1253b1
       </div>
     </a>
 

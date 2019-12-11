@@ -30,6 +30,25 @@ function login($username, $password) {
   }
 }
 
+function Retrieve($username, $field) {
+// get the field value from database
+
+  // connect to db
+  $conn = db_connect();
+  if (!$conn) {
+    return 0;
+  }
+
+  // check if username is unique
+  $result = $conn->query("SELECT " .$field. " from customers
+                          where username='".$username."'");
+  if (!$result) {
+     return 0;
+  }
+  $row = mysqli_fetch_row($result);
+  return $row[0];
+}
+
 function signup($username, $passwd, $shipname, $shipaddress1,$shipaddress2,$shipcity,$shipstate,$shipzip,$shipcountry) {
   // create record with username and password with db
   // if successful, return true
@@ -45,16 +64,17 @@ function signup($username, $passwd, $shipname, $shipaddress1,$shipaddress2,$ship
     $result = $conn->query("select * from customers
                            where username='".$username."'");
     if ($result) { //no existing user name found, insert row
-      $inresult = $conn->query("insert into customers  (
-                              username, password, 
-                              ship_name, ship_address1, ship_address2, 
-                              ship_city, ship_state, ship_state, ship_zip, ship_country)
-                              values(
-                              '".$username."', sha1('".$passwd."'),
-                              '".$shipname."','".$shipaddress1."','".$shipaddress2."',
-                              '".$shipcity."','".$shipstate."','".$shipzip."','".$shipcountry."')"
-                            );
-      if($inresult){ //insert record failed
+      $sql="INSERT INTO customers (
+        username, password, 
+        ship_name, ship_address1, ship_address2, 
+        ship_city, ship_state, ship_zip, ship_country)
+        VALUES (
+        '".$username."', sha1('".$passwd."'),
+        '".$shipname."','".$shipaddress1."','".$shipaddress2."',
+        '".$shipcity."','".$shipstate."','".$shipzip."','".$shipcountry."')";
+
+      $inresult = $conn->query( $sql );
+      if(!$inresult){ //insert record failed
         echo "<p>Unknown error. Counldn't generate user.<br></p>";
         return false;
       } else{ //insert record successful
@@ -66,7 +86,33 @@ function signup($username, $passwd, $shipname, $shipaddress1,$shipaddress2,$ship
     }
   }
 
+function saveaddr($username, $shipname,$shipaddress1,$shipaddress2,$shipcity,$shipstate,$shipzip,$shipcountry) {
 
+    // connect to db
+    $conn = db_connect();
+    if (!$conn) {
+      return 0;
+    }
+
+    $sql="UPDATE customers
+          SET
+          ship_name = '".$shipname."',
+          ship_address1 = '".$shipaddress1."', 
+          ship_address2 = '".$shipaddress2."',
+          ship_city = '".$shipcity."',
+          ship_state = '".$shipstate."', 
+          ship_zip = '".$shipzip."', 
+          ship_country = '".$shipcountry."'
+          WHERE username='".$username."'";
+    $inresult = $conn->query( $sql );
+    if(!$inresult){ //failed
+      echo "<p>Unknown error. Counldn't generate user.<br></p>";
+      return false;
+    } else{ //successful
+      return true;
+    }
+    
+}
 
 function change_password($username, $old_password, $new_password) {
 // change password for username/old_password to new_password
@@ -81,9 +127,10 @@ function change_password($username, $old_password, $new_password) {
       return false;
     }
 
-    $result = $conn->query("update admin
-                            set password = sha1('".$new_password."')
-                            where username = '".$username."'");
+    $result = $conn->query("UPDATE customers
+                            SET 
+                            password = sha1('".$new_password."')
+                            WHERE username = '".$username."'");
     if (!$result) {
       return false;  // not changed
     } else {

@@ -38,7 +38,6 @@ create table customers
   /* #####below is account log in info ##### */
   username char(16) not null,
   password char(40) not null,
-  type char(40),
 
   /* #####below is customer shipping info ##### */
   ship_name char(60) DEFAULT NULL,
