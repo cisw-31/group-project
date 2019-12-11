@@ -4,17 +4,19 @@ function display_login_form() {
     //display the log in form
 ?>
     <form method="post" action="auth.php">
-    <table bgcolor="#cccccc">
-    <tr>
-        <td>Username:</td>
-        <td><input type="text" name="username"/></td></tr>
-    <tr>
-        <td>Password:</td>
-        <td><input type="password" name="passwd"/></td></tr>   
-    <tr>
-        <td colspan="2" align="center">
-        <input type="submit" value="Log in"/></td></tr>
-    </table></form>
+      <table bgcolor="#cccccc">
+      <tr>
+          <td>Username:</td>
+          <td><input type="text" name="username"/></td></tr>
+      <tr>
+          <td>Password:</td>
+          <td><input type="password" name="passwd"/></td></tr>   
+      <tr>
+          <td colspan="2" align="center">
+          <input type="submit" value="Log in"/></td></tr>
+      </table>
+      <input type="hidden" name="type" value="login"/> 
+    </form>
     <a href="signup.php">
         Sign Up
     </a>
@@ -26,7 +28,7 @@ function display_signup_form() {
 ?>
   <br />
   <table border="0" width="100%" cellspacing="0">
-  <form action="purchase.php" method="post">
+  <form action="auth.php" method="post">
   <tr><th colspan="2" bgcolor="#cccccc">Your Account</th></tr>
   <tr>
     <td>User Name</td>
@@ -34,7 +36,7 @@ function display_signup_form() {
   </tr>
   <tr>
     <td>Password</td>
-    <td><input type="password" name="password" value="" maxlength="40" size="40"/></td>
+    <td><input type="password" name="passwd" value="" maxlength="40" size="40"/></td>
   </tr>
   <tr>
     <th colspan="2" bgcolor="#cccccc">Shipping Address</th>
@@ -44,8 +46,12 @@ function display_signup_form() {
     <td><input type="text" name="ship_name" value="" maxlength="40" size="40"/></td>
   </tr>
   <tr>
-    <td>Address</td>
-    <td><input type="text" name="ship_address" value="" maxlength="40" size="40"/></td>
+    <td>Address1</td>
+    <td><input type="text" name="ship_address1" value="" maxlength="40" size="40"/></td>
+  </tr>
+  <tr>
+    <td>Address2</td>
+    <td><input type="text" name="ship_address2" value="" maxlength="40" size="40"/></td>
   </tr>
   <tr>
     <td>City/Suburb</td>
@@ -68,6 +74,7 @@ function display_signup_form() {
         <input align="left" type="submit" value="Create"/>
     </td>
   </tr>
+  <input type="hidden" name="type" value="signup"/> 
   </form>
   </table><hr/>
 <?php

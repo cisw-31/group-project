@@ -41,12 +41,13 @@ create table customers
   type char(40),
 
   /* #####below is customer shipping info ##### */
-  ship_name char(60),
-  ship_address char(80),
-  ship_city char(30),
-  ship_state char(20),
-  ship_zip char(10),
-  ship_country char(20)
+  ship_name char(60) DEFAULT NULL,
+  ship_address1 char(80) DEFAULT NULL,
+  ship_address2 char(80) DEFAULT NULL,
+  ship_city char(30) DEFAULT NULL,
+  ship_state char(20) DEFAULT NULL,
+  ship_zip char(10) DEFAULT NULL,
+  ship_country char(20) DEFAULT NULL
 );
 
 insert into customers  (

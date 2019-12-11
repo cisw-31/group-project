@@ -1,10 +1,12 @@
 <?php
 
 function make_header() {
+
   //if session is not started, start one
   if(!isset($_SESSION)) {
     session_start();
   }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
