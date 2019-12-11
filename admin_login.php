@@ -18,20 +18,12 @@
 
     <div class="container">
         <div class="row admin-image justify-content-center">
-            <div class="col-3"></div>
-            <div class="col-6">
-                <img src="jejetilogo.png" alt="logo">
-            </div>
-            <div class="col-3"></div>
+            <img src="jejetilogo.png" alt="logo">
         </div>
-
-     </div>
-
+    </div>
      <div class="container login-admin">
-        <div class="row login-admin">
-            <div class="col-4"></div>
-            <div class="col-6">
-                <form method="post" action="auth_admin.php">
+        <div class="row login-admin justify-content-center">
+                <form method="post" action="admin_menu.php">
                 <table bgcolor="#cccccc">
                 <tr>
                 <td>Username:</td>
@@ -43,14 +35,9 @@
                 <td colspan="2" align="center">
                 <input type="submit" value="Log in"/></td></tr>
                 </table></form>
-            </div>
-            <div class="col-2"></div>
         </div>
-
      </div>
         
-
-     </div>
 
 <?php
 

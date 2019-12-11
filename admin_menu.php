@@ -22,17 +22,16 @@
         ?>
         <div class="container">
             <div class="row admin-welcome justify-content-center">
-                <div class="col-8 admin-welcome"> <h1>Welcome to the Admin Dashboard, <?php echo ucfirst($username); ?>.</h1> </div>
+                <h1>Welcome to the Admin Dashboard, <?php echo ucfirst($username); ?>.</h1> 
             </div> 
-            <div class="row admin-options">
-                <div class="col-6 admin-options">
+            <div class="row admin-options justify-content-center">
+    
                     <ul>
-                        <li><a href="mod_cat_form.php?value=add">Add Category to Shop</a></li>
-                        <li><a href="mod_cat_form.php?value=del">Delete Category from Shop</a></li>
-                        <li><a href="mod_product_form.php?value=add">Add Product to Shop</a></li>
-                        <li><a href="mod_product_form.php?value=del">Delete Product from Shop</a></li>
+                        <a href="mod_cat_form.php?value=add">Add Category to Shop</a><br>
+                        <a href="mod_cat_form.php?value=del">Delete Category from Shop</a><br>
+                        <a href="mod_product_form.php?value=add">Add Product to Shop</a><br>
+                        <a href="mod_product_form.php?value=del">Delete Product from Shop</a><br>
                     </ul>
-                </div>
             </div>
         
         </div>
@@ -42,8 +41,12 @@
         <?php
     }
     else{
+?>
+        <div class="row invalid-info justify-content-center">
+            <h1> Invalid </h1>
+        </div>
 
-
+<?php
     }
 
 
