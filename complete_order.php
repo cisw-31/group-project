@@ -1,4 +1,5 @@
 <?php 
+// refreshes the session because the order is now complete
     include("functions.php");
     session_unset();
     session_start();
@@ -6,7 +7,7 @@
     
     make_header();
 
-
+// this function prints checkout form data if it exists
 function print_if_set($field) {
     if(isset($_POST[$field])) {
         echo $_POST[$field]." ";
@@ -40,6 +41,9 @@ function print_if_set($field) {
     <br/>
 
     <?php
+
+    // this checks whether shipping info exists
+    // and prints if it does from print_shipping_info.php
     if(strlen($_POST["ship_first_name"]) > 0) {
         print_shipping_info();
     }

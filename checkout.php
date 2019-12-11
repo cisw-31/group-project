@@ -3,12 +3,13 @@
     session_start();
 
     make_header();
-
+  
+    // this array is used by the state <select> tag in the form
     $states = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ];
 
 ?>
 
-
+<!-- this form accepts customer information for checkout and send POST to complete_order.php -->
 <div class="container">
   <div class="py-5 text-center">
     <h2>Checkout</h2>
@@ -88,6 +89,7 @@
             <label for="state">State</label>
             <select class="custom-select d-block w-100" name="state" id="state" required>
               <option value="">Choose...</option>
+              <!-- creates state <option> for each state in states array -->
               <?php foreach($states as $state) {
                     ?>
                     <option><?php echo $state ?></option>
@@ -108,6 +110,7 @@
         </div>
         <hr class="mb-4">
         <div class="custom-control custom-checkbox">
+        <!-- this input uses toggleShippingForm function in defined in header.php  -->
           <input type="checkbox" class="custom-control-input" id="same-address" onclick="toggleShippingForm()">
           <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
         </div>

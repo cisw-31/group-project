@@ -1,6 +1,7 @@
 <?php
 
 function make_header() {
+  //if session is not started, start one
   if(!isset($_SESSION)) {
     session_start();
   }
@@ -14,9 +15,10 @@ function make_header() {
     <title>Jejeti</title>
     <link rel="stylesheet" href="hidden.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+  <!-- import bootstrap library for styling  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- extra styling for the navbar -->
     <style>
       .navbar-nav.navbar-center {
         position: absolute;
@@ -126,6 +128,7 @@ function make_header() {
           <a href="shopping_cart.php" style="text-decoration: none;">
             <?php 
             echo "&ensp;";
+            // This function calculates number of items in shopping cart
             cart_counter(); ?>
           <img width="30" height="30" alt="shopping-cart" src="shopping-cart-solid.svg"/>
           </a>
