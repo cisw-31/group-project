@@ -2,7 +2,7 @@
     //grabs function files
     include("functions.php");
 
-    session_start();
+    @session_start();
 
     //Checks if value submit was passed by go_product
     //If value was passed, we retrieve the productid and make 

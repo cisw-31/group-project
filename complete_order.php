@@ -2,7 +2,7 @@
 // refreshes the session because the order is now complete
     include("functions.php");
     session_unset();
-    session_start();
+    @session_start();
     $_SESSION["shopping_cart"] = [];
     
     make_header();

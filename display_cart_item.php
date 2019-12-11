@@ -8,7 +8,7 @@ function display_cart_item($item) {
     <tr>
         <td data-th="Product">
             <div class="row">
-                <div class="col-sm-2 hidden-xs"><img src="/product-images/<?php echo $item["product_name"] ?>.jpg" alt="<?php echo $item["product_name"] ?>" style="max-width:100px; max-height:100px;"class="img-responsive"/></div>
+                <div class="col-sm-2 hidden-xs"><img src="/group-project/product-images/<?php echo $item["product_name"] ?>.jpg" alt="<?php echo $item["product_name"] ?>" style="max-width:100px; max-height:100px;"class="img-responsive"/></div>
                 <div class="col-sm-10">
                     <h4 class="ml-3"><?php echo $item["product_name"] ?></h4>
                 </div>

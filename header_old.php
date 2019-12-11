@@ -1,6 +1,7 @@
 <?php
+
 function make_header() {
-  @session_start();
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,6 +74,7 @@ function make_header() {
                   //Will create a link for every category of plant that our database includes
                   echo "<a class='dropdown-item' href='go_cat.php?value=".$row['shape_id']."'>".ucfirst($row['shape_size'])."</a>";
                 }
+
           ?>
 
         </div>
@@ -91,12 +93,17 @@ function make_header() {
               <option>4</option>
             </select>
         </span>
+
           <input id="search" type="text" class="form-control" name="search" placeholder="Email">
+
           <span class="input-group-addon"> <button>Submit</button></span>
       </div>
   </div>
   <div class="col-md-2"></div>
   </div>
+
+
+
     </ul> */?>
 
     <a href="login.php">
@@ -107,7 +114,37 @@ function make_header() {
         } else { //temporary customer user items
           echo "<p><button class='w3-button w3-green'>Login</button></p>";
         }
-      ?>
+?>
+  <div class="dropdown">
+  <?php 
+    if(isset($_SESSION['customer_username'])) { //logged in customer ?>
+      <button class="dropbtn"> <?php
+        echo "Dear ".$_SESSION['customer_username']; ?>
+      </button>
+      <div class="dropdown-content">
+        <form method="post" action="account.php">
+            <input type="submit" value="My Account"/></td></tr>
+            <input type="hidden" name="type" value="edit"/> 
+        </form>
+        <form method="post" action="auth.php">
+            <input type="submit" value="Log Out"/></td></tr>
+            <input type="hidden" name="type" value="logout"/> 
+        </form>
+      </div>
+  <?php   
+        }else{ //guest ?>
+      <button class="dropbtn"> <?php
+        echo "Guest"; ?>
+      </button>
+      <div class="dropdown-content">
+        <form method="post" action="account.php">
+            <input type="submit" value="Log In"/></td></tr>
+            <input type="hidden" name="type" value="login"/> 
+        </form>
+        <form method="post" action="account.php">
+            <input type="submit" value="Sign Up"/></td></tr>
+            <input type="hidden" name="type" value="signup"/> 
+        </form>
       </div>
     </a>
 
@@ -150,4 +187,5 @@ function make_header() {
 
 <?php
 }
+
 ?>

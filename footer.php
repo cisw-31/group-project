@@ -1,7 +1,20 @@
 <?php
-
+@session_start();
 function make_footer() {
 ?>
+
+<div class="row admin-button justify-content-center">
+  <?php if (is_null(@$_SESSION['admin_user'])) {
+  ?> 
+
+  <?php
+  } else {
+  ?>
+    <a href="admin_menu.php"> Go back to Admin menu </a> 
+  <?php
+  }
+  ?>
+</div>
 <nav class="navbar fixed-bottom navbar-dark bg-success">
   <div class="container-fluid">
     <div class="row-footer">

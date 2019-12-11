@@ -1,6 +1,6 @@
 <?php 
     include("functions.php");
-    session_start();
+    @session_start();
 
     make_header();
   
