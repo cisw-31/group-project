@@ -1,10 +1,7 @@
 <?php
 
 function make_header() {
-  //if session is not started, start one
-  if(!isset($_SESSION)) {
-    session_start();
-  }
+  session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,10 +12,9 @@ function make_header() {
     <title>Jejeti</title>
     <link rel="stylesheet" href="hidden.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <!-- import bootstrap library for styling  -->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- extra styling for the navbar -->
     <style>
       .navbar-nav.navbar-center {
         position: absolute;
@@ -33,28 +29,6 @@ function make_header() {
       .w3-button {
         width:150px;
       }
-      
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-      }
-
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-      }
-
-      .dropdown-content a:hover {background-color: #ddd;}
-
-      .dropdown:hover .dropdown-content {display: block;}
-
-
     </style>
 
     <!-- Toggles the shipping form based on user input -->
@@ -81,8 +55,7 @@ function make_header() {
     <ul class="nav navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" href="index.php">Home</a>
-      </li>    <div class="dropdown">
-      <button class="dropbtn">
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="about.php">About</a>
       </li>
@@ -133,7 +106,16 @@ function make_header() {
 
     </ul> */?>
 
+    <a href="login.php">
+      <div class="login-button" > 
+      <?php /* below for user sign in status */
+        if(isset($_SESSION['customer_username'])) { //logged-in
+          echo "Dear ".$_SESSION['customer_username'];
+        } else { //temporary customer user items
+          echo "<p><button class='w3-button w3-green'>Login</button></p>";
+        }
 
+<<<<<<< HEAD
   <div class="dropdown">
   <?php 
     if(isset($_SESSION['customer_username'])) { //logged in customer ?>
@@ -164,24 +146,17 @@ function make_header() {
             <input type="submit" value="Sign Up"/></td></tr>
             <input type="hidden" name="type" value="signup"/> 
         </form>
+=======
+      ?>
+>>>>>>> 593c02afe5bffa8f220e83a02a2aea6d1a1253b1
       </div>
-  <?php 
-  } ?>
-
-
-
-
-
-  </div>
-
-
+    </a>
 
     <ul class="nav navbar-nav justify-content-end">
         <li>
           <a href="shopping_cart.php" style="text-decoration: none;">
             <?php 
             echo "&ensp;";
-            // This function calculates number of items in shopping cart
             cart_counter(); ?>
           <img width="30" height="30" alt="shopping-cart" src="shopping-cart-solid.svg"/>
           </a>
