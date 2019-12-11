@@ -28,6 +28,18 @@ function make_header() {
       .w3-button {
         width:150px;
       }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+
+      .dropdown:hover .dropdown-content {display: block;}
+
     </style>
 
     <!-- Toggles the shipping form based on user input -->
@@ -99,17 +111,44 @@ function make_header() {
   </div>
     </ul> */?>
 
-    <a href="login.php">
-      <div class="login-button" > 
-      <?php /* below for user sign in status */
-        if(isset($_SESSION['customer_username'])) { //logged-in
-          echo "Dear ".$_SESSION['customer_username'];
-        } else { //temporary customer user items
-          echo "<p><button class='w3-button w3-green'>Login</button></p>";
-        }
-      ?>
+  <div class="dropdown">
+    <?php 
+      if(isset($_SESSION['customer_username'])) { //logged in customer ?>
+        <button class="dropbtn"> <?php
+          echo "Dear ".$_SESSION['customer_username']; ?>
+        </button>
+        <div class="dropdown-content">
+          <form method="post" action="account.php">
+              <input type="submit" value="My Account"/></td></tr>
+              <input type="hidden" name="type" value="edit"/> 
+          </form>
+          <form method="post" action="auth.php">
+              <input type="submit" value="Log Out"/></td></tr>
+              <input type="hidden" name="type" value="logout"/> 
+          </form>
+        </div>
+    <?php   
+        }else{ //guest ?>
+      <button class="dropbtn"> <?php
+        echo "Guest"; ?>
+      </button>
+      <div class="dropdown-content">
+        <form method="post" action="account.php">
+            <input type="submit" value="Log In"/></td></tr>
+            <input type="hidden" name="type" value="login"/> 
+        </form>
+        <form method="post" action="account.php">
+            <input type="submit" value="Sign Up"/></td></tr>
+            <input type="hidden" name="type" value="signup"/> 
+        </form>
       </div>
-    </a>
+      <?php
+    }
+    
+    ?>
+
+  </div>
+
 
     <ul class="nav navbar-nav justify-content-end">
         <li>
