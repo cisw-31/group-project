@@ -79,4 +79,6 @@ function display_signup_form() {
   </table><hr/>
 <?php
 }
+
 ?>
+

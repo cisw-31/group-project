@@ -24,6 +24,11 @@ if ($_POST['type'] == "login"){     // user has just tried logging in
         exit;
       }
   }
+}elseif ($_POST['type'] == "logout") { // user has just tried logging out
+  unset($_SESSION['customer_username']); //
+  make_header();
+  echo "<p>You have successfully logged out</p>";
+  make_footer();
 }elseif ($_POST['type'] == "signup") { // user has just tried signing up
   if (($_POST['username']) && ($_POST['passwd'])) {
     $username = $_POST['username'];
@@ -52,7 +57,6 @@ if ($_POST['type'] == "login"){     // user has just tried logging in
     echo "<p>Missing user name or password.</p>";
     make_footer();
   }
-
 }
 
 

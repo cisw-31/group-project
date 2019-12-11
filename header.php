@@ -1,12 +1,10 @@
 <?php
 
 function make_header() {
-
   //if session is not started, start one
   if(!isset($_SESSION)) {
     session_start();
   }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,6 +33,28 @@ function make_header() {
       .w3-button {
         width:150px;
       }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {background-color: #ddd;}
+
+      .dropdown:hover .dropdown-content {display: block;}
+
+
     </style>
 
     <!-- Toggles the shipping form based on user input -->
@@ -61,7 +81,8 @@ function make_header() {
     <ul class="nav navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" href="index.php">Home</a>
-      </li>
+      </li>    <div class="dropdown">
+      <button class="dropbtn">
       <li class="nav-item">
         <a class="nav-link" href="about.php">About</a>
       </li>
@@ -112,18 +133,41 @@ function make_header() {
 
     </ul> */?>
 
-    <a href="login.php">
-      <div class="login-button" > 
-      <?php /* below for user sign in status */
-        if(isset($_SESSION['customer_username'])) { //logged-in
-          echo "Dear ".$_SESSION['customer_username'];
-        } else { //temporary customer user items
-          echo "<p><button class='w3-button w3-green'>Login</button></p>";
-        }
 
-      ?>
+  <div class="dropdown">
+  <?php 
+    if(isset($_SESSION['customer_username'])) { //logged in customer ?>
+      <button class="dropbtn"> <?php
+        echo "Dear ".$_SESSION['customer_username']; ?>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">My Account</a>
+        <a href="#">
+          <form method="post" action="auth.php">
+            <input type="submit" value="Sign Out"/></td></tr>
+            <input type="hidden" name="type" value="logout"/> 
+          </form>
+        </a>
       </div>
-    </a>
+  <?php   
+        }else{ //guest ?>
+      <button class="dropbtn"> <?php
+        echo "Guest"; ?>
+      </button>
+      <div class="dropdown-content">
+        <a href="login.php">Log In</a>
+        <a href="signup.php">Sign Up</a>
+      </div>
+  <?php 
+  } ?>
+
+
+
+
+
+  </div>
+
+
 
     <ul class="nav navbar-nav justify-content-end">
         <li>
