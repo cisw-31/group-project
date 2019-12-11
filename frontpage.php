@@ -46,10 +46,31 @@
     </div>
 </div>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col"><p> Placeholder Text</p></div>
-        <div class="col"><p> Placeholder Text</p></div>
-        <div class="col"><p> Placeholder Text</p></div>
+<div class="container">
+    <div class="row frontpage-cards justify-content-center">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/group-project/product-images/thinking.jpg" alt="Person thinking">
+            <div class="card-body">
+                <h5 class="card-title">What plant(s) are best for you?</h5>
+                <p class="card-text">Get to know the best plants to purchase for your area.</p>
+                <a href="#" class="btn btn-primary">Find out</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/group-project/product-images/bigbrain.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Trenton's Guide to Plants</h5>
+                <p class="card-text">Trenton unloads his vast knowledge of plants for free...jk.</p>
+                <a href="#" class="btn btn-primary">Learn more</a>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="/group-project/product-images/prime.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Jejeti Prime</h5>
+                <p class="card-text">Jejeti Prime is Launching Soon.</p>
+                <a href="#" class="btn btn-primary">Interested</a>
+            </div>
+        </div>
     </div> 
 </div>
