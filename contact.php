@@ -1,36 +1,58 @@
-
 <?php
-//grabs function files 
+//grabs function files
 include("functions.php");
 //creates html header (see functions.php) TEST COMMENT
-make_header(); 
+make_header();
 ?>
+<html>
 
-<form>
-  <div class="form-group">
-    <label for="exampleInputLastName">Last name</label>
-    <input type="Text" class="form-control" id="exampleInputLastName" placeholder="Enter last name">
-    
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFirstName">First name</label>
-    <input type="Text" class="form-control" id="exampleInputFirstName" placeholder="Enter first name">
-  </div>
+  <head>
+    <link rel="stylesheet" href="contact_page.css">
+  </head>
 
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
+  <body>
 
-<div class="form-group">
-    <label for="exampleInputSubject">Subject</label>
-    <input type="Text" class="form-control" id="exampleInputSubject" placeholder="Enter Subject">
-  </div>
+    <h1>Contact Us</h1>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="container">
+      <div style="text-align:center">
+      </div>
+      <div class="row">
+        <div class="column">
+          <h4>Phone Number:</h4>
+          <p>1(800) 438-5323</p>
+          <br />
+          <hr class="line1">
+          <h4>Address:</h4>
+          <p>Jejeti</p>
+          <p>15873 Plant Lane</p>
+          <p>Walnut, California</p>
+          <p>91789</p>
+          <br />
+          <hr class="line2">
+          <h4>Email:</h4>
+          <p>info@jejeti.com</p>
+          <p>support@jejeti.com</p>
+        </div>
+        <div class="column">
+          <form>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your first name.." required>
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="Email" placeholder="Email address" required>
+            <label for="message">Message</label>
+            <textarea id="subject" name="subject" placeholder="Type your message..." style="height:170px" required></textarea>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
 
-</form>
+  </body>
+
+</html>
 
 <?php
 //creates html footer (see functions.php)
