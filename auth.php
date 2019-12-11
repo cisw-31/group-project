@@ -57,8 +57,40 @@ if ($_POST['type'] == "login"){     // user has just tried logging in
     echo "<p>Missing user name or password.</p>";
     make_footer();
   }
+}elseif ($_POST['type'] == "save") { // user has just saved address changes
+  $username = $_SESSION['customer_username']; 
+  $shipname = $_POST['ship_name'];
+  $shipaddress1 = $_POST['ship_address1'];
+  $shipaddress2 = $_POST['ship_address2'];
+  $shipcity = $_POST['ship_city'];
+  $shipstate = $_POST['ship_state'];
+  $shipzip = $_POST['ship_zip'];
+  $shipcountry = $_POST['ship_country'];
+  if (saveaddr($username,$shipname,$shipaddress1,$shipaddress2,$shipcity,$shipstate,$shipzip,$shipcountry)) { //successful update address
+    make_header();
+    echo "<p>You have successfully changed your shipping address!</p>";
+    make_footer();
+  } else {  // unsuccessful update address
+    make_header();
+    echo "<p>You could not change your shipping address.</p>";
+    make_footer();
+    exit;
+  }
+}elseif ($_POST['type'] == "changepasswd") { // user has just saved address changes
+  $username = $_SESSION['customer_username']; 
+  $oldpasswd = $_POST['oldpasswd'];
+  $newpasswd = $_POST['newpasswd'];
+  if (change_password($username, $oldpasswd, $newpasswd)) { //successful update address
+    make_header();
+    echo "<p>You have successfully changed your password!</p>";
+    make_footer();
+  } else {  // unsuccessful update address
+    make_header();
+    echo "<p>You could not change your password.</p>";
+    make_footer();
+    exit;
+  }
 }
-
 
 
 

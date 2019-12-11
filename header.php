@@ -141,13 +141,14 @@ function make_header() {
         echo "Dear ".$_SESSION['customer_username']; ?>
       </button>
       <div class="dropdown-content">
-        <a href="#">My Account</a>
-        <a href="#">
-          <form method="post" action="auth.php">
-            <input type="submit" value="Sign Out"/></td></tr>
+        <form method="post" action="account.php">
+            <input type="submit" value="My Account"/></td></tr>
+            <input type="hidden" name="type" value="edit"/> 
+        </form>
+        <form method="post" action="auth.php">
+            <input type="submit" value="Log Out"/></td></tr>
             <input type="hidden" name="type" value="logout"/> 
-          </form>
-        </a>
+        </form>
       </div>
   <?php   
         }else{ //guest ?>
@@ -155,8 +156,14 @@ function make_header() {
         echo "Guest"; ?>
       </button>
       <div class="dropdown-content">
-        <a href="login.php">Log In</a>
-        <a href="signup.php">Sign Up</a>
+        <form method="post" action="account.php">
+            <input type="submit" value="Log In"/></td></tr>
+            <input type="hidden" name="type" value="login"/> 
+        </form>
+        <form method="post" action="account.php">
+            <input type="submit" value="Sign Up"/></td></tr>
+            <input type="hidden" name="type" value="signup"/> 
+        </form>
       </div>
   <?php 
   } ?>
