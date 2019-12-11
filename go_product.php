@@ -25,7 +25,7 @@
         </div>
         <div class="row product-image">
             <div class="col product-image">
-                <?php echo "<img src='".$row2['plant_botanical'].".jpg' width='500' height='500' alt='".$row2['plant_botanical']."'>"; ?>
+                <?php echo "<img src='/group-project/product-images/".$row2['plant_botanical'].".jpg' width='500' height='500' alt='".$row2['plant_botanical']."'>"; ?>
             </div>
             <div class="col product-details">
                 <h5> Product Details </h5>

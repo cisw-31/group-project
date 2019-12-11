@@ -25,7 +25,7 @@
         ?>
         <!-- Work in Progess need a database that has an id and image -->
         <div class="card" style="width: 18rem;">
-            <?php echo "<img class='card-img-top' src='".$row['plant_botanical'].".jpg' alt='".$row['plant_botanical']."'>" ?>
+            <?php echo "<img class='card-img-top' src='/group-project/product-images/".$row['plant_botanical'].".jpg' alt='".$row['plant_botanical']."'>" ?>
             <div class="card-body">
                 <h5 class="card-title"><?php echo $row['plant_common'];?></h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
