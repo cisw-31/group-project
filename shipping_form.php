@@ -2,8 +2,38 @@
 
 
 function shipping_form() {
-
+  
   $states2 = [ 'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ];
+  
+  //below script for button auto fill saved address of user
+  
+  $username = $_SESSION['customer_username'];
+  $fname = Retrieve($username, 'fname' );
+  $lname = Retrieve($username, 'lname' );
+  $sa1 = Retrieve($username, 'ship_address1' );
+  $sa2 = Retrieve($username, 'ship_address2' );
+  $scity = Retrieve($username, 'ship_city' );
+  $sstate= Retrieve($username, 'ship_state' ) ;
+  $sz = Retrieve($username, 'ship_zip' ) ;
+  $sc = Retrieve($username, 'ship_country' );
+
+  echo '
+  <button id="savedaddressbutton"> Use my saved address </button> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $("#savedaddressbutton").click(function(event){
+    $("#ship_first_name").val("'.$fname.'");
+    $("#ship_last_name").val("'.$lname.'");
+    $("#ship_ddress").val("'.$sa1.'");
+    $("#ship_address2").val("'.$sa2.'");
+    $("#ship_city").val("'.$scity.'");
+    $("#ship_state").val("'.$sstate.'");
+    $("#ship_zip").val("'.$sz.'");
+    $("#ship_country").val("'.$sc.'");
+    });
+  </script>
+  '
+
 ?>
     
   

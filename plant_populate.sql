@@ -39,6 +39,12 @@ create table customers
   username char(16) not null,
   password char(40) not null,
 
+  /* #####below is basic user info ##### */
+  fname char(40) DEFAULT NULL,
+  lname char(40) DEFAULT NULL,
+  tel char(40) DEFAULT NULL,
+  email char(40) DEFAULT NULL,
+
   /* #####below is customer shipping info ##### */
   ship_name char(60) DEFAULT NULL,
   ship_address1 char(80) DEFAULT NULL,

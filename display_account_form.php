@@ -29,6 +29,7 @@ function display_signup_form() {
   <table border="0" width="100%" cellspacing="0">
   <form action="auth.php" method="post">
   <tr><th colspan="2" bgcolor="#cccccc">Your Account</th></tr>
+
   <tr>
     <td>User Name</td>
     <td><input type="text" name="username" value="" maxlength="40" size="40"/></td>
@@ -37,9 +38,28 @@ function display_signup_form() {
     <td>Password</td>
     <td><input type="password" name="passwd" value="" maxlength="40" size="40"/></td>
   </tr>
+
+  <tr>
+    <td>First Name</td>
+    <td><input type="text" name="fname" value="" maxlength="40" size="40"/></td>
+  </tr>
+  <tr>
+    <td>Last Name</td>
+    <td><input type="text" name="lname" value="" maxlength="40" size="40"/></td>
+  </tr>
+  <tr>
+    <td>Phone Number</td>
+    <td><input type="tel" name="tel" value="" maxlength="40" size="40"/></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><input type="email" name="email" value="" maxlength="40" size="40"/></td>
+  </tr>
+
   <tr>
     <th colspan="2" bgcolor="#cccccc">Shipping Address</th>
   </tr>
+  
   <tr>
     <td>Receiver Name</td>
     <td><input type="text" name="ship_name" value="" maxlength="40" size="40"/></td>
@@ -86,7 +106,7 @@ function display_edit_form() {
 <br />
 <table border="0" width="100%" cellspacing="0">
 <form action="auth.php" method="post">
-<tr><th colspan="2" bgcolor="#cccccc">Your Account</th></tr>
+<tr><th colspan="2" bgcolor="#cccccc">Password</th></tr>
 <tr>
   <td>Old Password</td>
   <td><input type="password" name="oldpasswd" value= "" maxlength="40" size="40"/></td>
@@ -103,11 +123,35 @@ function display_edit_form() {
 <input type="hidden" name="type" value="changepasswd"/> 
 </form>
 <tr>
-  <th colspan="2" bgcolor="#cccccc">Shipping Address</th>
+  <th colspan="2" bgcolor="#cccccc">User Information</th>
 </tr>
 <form action="auth.php" method="post">
 <tr>
-  <td>Receiver Name</td>
+  <td>First Name</td>
+  <td><input type="text" name="fname" 
+  value= "<?php echo Retrieve($username, 'fname' ) ?>"
+  maxlength="40" size="40"/></td>
+</tr>
+<tr>
+  <td>Last Name</td>
+  <td><input type="text" name="lname" 
+  value= "<?php echo Retrieve($username, 'lname' ) ?>"
+  maxlength="40" size="40"/></td>
+</tr>
+<tr>
+  <td>Phone Number</td>
+  <td><input type="tel" name="tel" 
+  value= "<?php echo Retrieve($username, 'tel' ) ?>"
+  maxlength="40" size="40"/></td>
+</tr>
+<tr>
+  <td>Email</td>
+  <td><input type="email" name="email" 
+  value= "<?php echo Retrieve($username, 'email' ) ?>"
+  maxlength="40" size="40"/></td>
+</tr>
+<tr>
+  <td>Shipping Receiver Name</td>
   <td><input type="text" name="ship_name" 
   value= "<?php echo Retrieve($username, 'ship_name' ) ?>"
   maxlength="40" size="40"/></td>

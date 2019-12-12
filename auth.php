@@ -2,7 +2,7 @@
 
 // include function files for this application
 require_once("functions.php");
-session_start();
+@session_start();
 
 
 
@@ -32,6 +32,10 @@ if ($_POST['type'] == "login"){     // user has just tried logging in
 }elseif ($_POST['type'] == "signup") { // user has just tried signing up
   if (($_POST['username']) && ($_POST['passwd'])) {
     $username = $_POST['username'];
+    $fname = $_POST['fname'];
+    $lname = $_POST['lname'];
+    $tel = $_POST['tel'];
+    $email = $_POST['email'];
     $passwd = $_POST['passwd'];
     $shipname = $_POST['ship_name'];
     $shipaddress1 = $_POST['ship_address1'];
@@ -41,7 +45,7 @@ if ($_POST['type'] == "login"){     // user has just tried logging in
     $shipzip = $_POST['ship_zip'];
     $shipcountry = $_POST['ship_country'];
 
-    if (signup($username, $passwd,$shipname,$shipaddress1,$shipaddress2,$shipcity,$shipstate,$shipzip,$shipcountry)) {
+    if (signup($username,$passwd,$fname,$lname,$tel,$email,$shipname,$shipaddress1,$shipaddress2,$shipcity,$shipstate,$shipzip,$shipcountry)) {
       $_SESSION['customer_username'] = $username; //successful signup
       make_header();
       echo "<p>You have successfully signed up your account!</p>";
@@ -59,6 +63,10 @@ if ($_POST['type'] == "login"){     // user has just tried logging in
   }
 }elseif ($_POST['type'] == "save") { // user has just saved address changes
   $username = $_SESSION['customer_username']; 
+  $fname = $_POST['fname'];
+  $lname = $_POST['lname'];
+  $tel = $_POST['tel'];
+  $email = $_POST['email'];
   $shipname = $_POST['ship_name'];
   $shipaddress1 = $_POST['ship_address1'];
   $shipaddress2 = $_POST['ship_address2'];
@@ -66,7 +74,7 @@ if ($_POST['type'] == "login"){     // user has just tried logging in
   $shipstate = $_POST['ship_state'];
   $shipzip = $_POST['ship_zip'];
   $shipcountry = $_POST['ship_country'];
-  if (saveaddr($username,$shipname,$shipaddress1,$shipaddress2,$shipcity,$shipstate,$shipzip,$shipcountry)) { //successful update address
+  if (saveaddr($username,$fname,$lname,$tel,$email,$shipname,$shipaddress1,$shipaddress2,$shipcity,$shipstate,$shipzip,$shipcountry)) { //successful update address
     make_header();
     echo "<p>You have successfully changed your shipping address!</p>";
     make_footer();

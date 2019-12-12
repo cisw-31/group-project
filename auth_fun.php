@@ -49,7 +49,9 @@ function Retrieve($username, $field) {
   return $row[0];
 }
 
-function signup($username, $passwd, $shipname, $shipaddress1,$shipaddress2,$shipcity,$shipstate,$shipzip,$shipcountry) {
+function signup($username, $passwd, 
+$fname, $lname, $tel, $email, 
+$shipname, $shipaddress1,$shipaddress2,$shipcity,$shipstate,$shipzip,$shipcountry) {
   // create record with username and password with db
   // if successful, return true
   // else return false
@@ -65,11 +67,13 @@ function signup($username, $passwd, $shipname, $shipaddress1,$shipaddress2,$ship
                            where username='".$username."'");
     if ($result) { //no existing user name found, insert row
       $sql="INSERT INTO customers (
-        username, password, 
+        username, password,
+        fname, lname, tel, email,
         ship_name, ship_address1, ship_address2, 
         ship_city, ship_state, ship_zip, ship_country)
         VALUES (
         '".$username."', sha1('".$passwd."'),
+        '".$fname."','".$lname."','".$tel."','".$email."', 
         '".$shipname."','".$shipaddress1."','".$shipaddress2."',
         '".$shipcity."','".$shipstate."','".$shipzip."','".$shipcountry."')";
 
@@ -86,7 +90,7 @@ function signup($username, $passwd, $shipname, $shipaddress1,$shipaddress2,$ship
     }
   }
 
-function saveaddr($username, $shipname,$shipaddress1,$shipaddress2,$shipcity,$shipstate,$shipzip,$shipcountry) {
+function saveaddr($username,$fname,$lname,$tel,$email,$shipname,$shipaddress1,$shipaddress2,$shipcity,$shipstate,$shipzip,$shipcountry) {
 
     // connect to db
     $conn = db_connect();
@@ -96,6 +100,10 @@ function saveaddr($username, $shipname,$shipaddress1,$shipaddress2,$shipcity,$sh
 
     $sql="UPDATE customers
           SET
+          fname = '".$fname."',
+          lname = '".$lname."',
+          tel = '".$tel."',
+          email = '".$email."',
           ship_name = '".$shipname."',
           ship_address1 = '".$shipaddress1."', 
           ship_address2 = '".$shipaddress2."',

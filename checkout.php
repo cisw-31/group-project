@@ -63,12 +63,10 @@
             Please enter your shipping address.
           </div>
         </div>
-
         <div class="mb-3">
           <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
           <input type="text" name="address-2" class="form-control" id="address2" placeholder="Apartment or suite">
         </div>
-
         <div class="mb-3">
           <label for="city">City</label>
           <input type="text" name="city" class="form-control" id="city" placeholder="City">
