@@ -7,6 +7,4 @@
  elseif ($_POST['type'] == "edit"){display_edit_form();}
  elseif ($_POST['type'] == "signup"){display_signup_form();}
 
-
- make_footer();
 ?>

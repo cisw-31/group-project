@@ -40,6 +40,13 @@ function make_header() {
 
       .dropdown:hover .dropdown-content {display: block;}
 
+      .logintable {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
     </style>
 
     <!-- Toggles the shipping form based on user input -->
