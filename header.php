@@ -129,7 +129,7 @@ function make_header() {
         </div>
     <?php   
         }else{ //guest ?>
-      <button class="dropbtn"> <?php
+      <button class="dropbtn btn btn-success"> <?php
         echo "Guest"; ?>
       </button>
       <div class="dropdown-content">

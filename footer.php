@@ -1,28 +1,34 @@
 <?php
 @session_start();
 function make_footer() {
+
+//function to make footer
+//if a session for a admin user exists a button to return to admin menu will appear on footer
+//contact us link to form where a customer can send us a message
+//or access of number and email
 ?>
 
-<div class="row admin-button justify-content-center">
-  <?php if (is_null(@$_SESSION['admin_user'])) {
-  ?> 
-
-  <?php
-  } else {
-  ?>
-    <a href="admin_menu.php"> Go back to Admin menu </a> 
-  <?php
-  }
-  ?>
-</div>
 <nav class="navbar fixed-bottom navbar-dark bg-success">
-  <div class="container-fluid">
-    <div class="row-footer">
-      <div class="col-2"></div>
-      <div class="col-8">
+  <div class="container">
+   
+    <div class="row-footer justify-content-center">
+    
+<?php 
+      if (is_null(@$_SESSION['admin_user'])) {
+?> 
+
+<?php
+      } else {
+?>
+        
+          <a href="admin_menu.php" class="btn btn-warning btn-sm active" role="button" aria-pressed="true">Go back to Admin menu </a><br>
+
+<?php 
+      }  
+?>
+      
         <a class="navbar-brand" href="contact.php">Contact Us</a>
-      </div>
-      </div class="col-2"></div>
+      
     </div>
   </div>
 
