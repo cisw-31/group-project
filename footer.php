@@ -1,6 +1,11 @@
 <?php
 @session_start();
 function make_footer() {
+
+//function to make footer
+//if a session for a admin user exists a button to return to admin menu will appear on footer
+//contact us link to form where a customer can send us a message
+//or access of number and email
 ?>
 
 <nav class="navbar fixed-bottom navbar-dark bg-success">
@@ -15,8 +20,8 @@ function make_footer() {
 <?php
       } else {
 ?>
-
-          <a href="admin_menu.php"> Go back to Admin menu </a><br>
+        
+          <a href="admin_menu.php" class="btn btn-warning btn-sm active" role="button" aria-pressed="true">Go back to Admin menu </a><br>
 
 <?php 
       }  
